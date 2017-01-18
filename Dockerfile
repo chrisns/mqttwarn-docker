@@ -7,7 +7,8 @@ RUN pip install paho-mqtt
 WORKDIR /opt/mqttwarn
 
 RUN groupadd -r mqttwarn && useradd -r -g mqttwarn mqttwarn && \
-  chown -R mqttwarn /opt/mqttwarn
+  chown -R mqttwarn /opt/mqttwarn /usr/local/bin/mqttwarn.py && \
+  chmod +x /usr/local/bin/mqttwarn.py
 
 USER mqttwarn
 
